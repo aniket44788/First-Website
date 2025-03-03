@@ -1,15 +1,12 @@
+/* General Styles */
 .main-content-head {
   width: 100%;
-  height: 700px;
-  /* border: 3px solid black; */
-  /* border: 2px solid red; */
-  /* position: absolute; */
+  height: 700px; /* Default height for large screens */
 }
 
 .are-you-fit {
   position: relative;
   width: 100%;
-  max-width: 100%;
 }
 
 .content-video {
@@ -17,7 +14,6 @@
   height: auto;
   object-fit: cover;
   filter: blur(1px); /* Apply blur effect */
-  transition: filter 0.3s ease; /* Optional: Smooth transition for the blur effect */
 }
 
 .video-text-overlay {
@@ -26,18 +22,91 @@
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
-  font-size: 50px;
+  font-size: 50px; /* Default text size for large screens */
   font-weight: bold;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
   text-align: center;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  /* opacity: 0.5; */
-}
-.maincontent {
-  width: 100%;
-  height: 800px;
-  background-color: lightblue;
-  border: red 2px solid;
 }
 
+.maincontent {
+  width: 100%;
+  height: 800px; /* Default height for large screens */
+  background-color: lightblue;
+  border: 2px solid red;
+}
+
+/* Media Queries */
+
+/* Desktop/Laptop (Above 1024px) */
+@media (min-width: 1024px) {
+  .main-content-head {
+    height: 700px; /* Keep default height for large screens */
+  }
+  
+  .video-text-overlay {
+    font-size: 50px; /* Larger text for larger screens */
+  }
+  
+  .maincontent {
+    height: 800px; /* Default height for large screens */
+  }
+}
+
+/* Tablet (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .main-content-head {
+    height: 600px; /* Adjust height for tablets */
+  }
+
+  .content-video {
+    filter: blur(0.8px); /* Slightly less blur for tablets */
+  }
+
+  .video-text-overlay {
+    font-size: 40px; /* Smaller text for tablets */
+  }
+
+  .maincontent {
+    height: 700px; /* Adjust height for tablets */
+  }
+}
+
+/* Mobile (Below 768px) */
+@media (max-width: 767px) {
+  .main-content-head {
+    height: 500px; /* Adjust height for mobile */
+  }
+
+  .content-video {
+    filter: blur(0.5px); /* Reduced blur for mobile */
+  }
+
+  .video-text-overlay {
+    font-size: 30px; /* Smaller text for mobile */
+    top: 40%; /* Adjust position for mobile */
+  }
+
+  .maincontent {
+    height: 600px; /* Adjust height for mobile */
+  }
+}
+
+/* Extra Small Mobile (Below 480px) */
+@media (max-width: 480px) {
+  .main-content-head {
+    height: 400px; /* Further reduce height for small screens */
+  }
+
+  .content-video {
+    filter: blur(0.3px); /* Light blur effect for very small screens */
+  }
+
+  .video-text-overlay {
+    font-size: 25px; /* Even smaller text for very small screens */
+    top: 30%; /* Adjust position further */
+  }
+
+  .maincontent {
+    height: 500px; /* Further reduce height for smaller screens */
+  }
+}
