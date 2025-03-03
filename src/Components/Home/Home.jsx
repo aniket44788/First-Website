@@ -1,5 +1,7 @@
 import React from "react";
-import "./home.css"
+// import "./home.css"
+import "../Home/home.css"
+
 import { Link } from "react-router-dom";
 import mlogo from "../Home/logo.png"
 

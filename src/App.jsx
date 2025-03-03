@@ -1,6 +1,7 @@
 import React from "react";
-import Navbar from "./Components/Navbar/Navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./Components/Navbar/Navbar";
+
 import Home from "./Components/Home/Home";
 import Aboutus from "./Components/Navbar/Aboutus";
 import Destination from "./Components/Navbar/Destination";
@@ -13,10 +14,11 @@ function App() {
     <>
     <div>
      <Home />
-     <Content1/>
+     {/* <Content1/> */}
      </div>
      <div>
       <Routes>
+      <Route path="/" element={<Home />} />
         <Route path="/navbar" element={<Navbar />}></Route>
         <Route path="/about" element={<Aboutus/>}></Route>
         <Route path="/destination" element={<Destination/>}></Route>
